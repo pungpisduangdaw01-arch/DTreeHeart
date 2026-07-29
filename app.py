@@ -17,69 +17,83 @@ st.markdown("""
 <style>
     /* พื้นหลังหลัก */
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #ffffff;
+        background-image:
+            radial-gradient(circle at 20% 20%, rgba(255,102,153,0.08) 0%, transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(255,182,193,0.12) 0%, transparent 40%),
+            linear-gradient(rgba(255,102,153,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,102,153,0.04) 1px, transparent 1px);
+        background-size: auto, auto, 40px 40px, 40px 40px;
     }
+    html, body, [class*="css"] { font-family: 'Prompt', sans-serif; }
     
     /* หัวข้อหลัก */
     .main-title {
         font-size: 3rem;
         font-weight: bold;
         text-align: center;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        background: linear-gradient(90deg, #e6005c, #ff4081, #ff6699);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 0.5rem;
     }
     
     .sub-title {
         font-size: 1.2rem;
         text-align: center;
-        color: #f0f0f0;
+        color: #8c5a6f;
         margin-bottom: 2rem;
     }
     
-    /* กล่องผลลัพธ์ */
+    /* กล่องผลลัพธ์ - ปลอดภัย (Safe / Soft Mint Pink) */
     .result-box-safe {
-        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        background: linear-gradient(135deg, #a8e6cf 0%, #d4fc79 100%);
         padding: 2rem;
         border-radius: 20px;
         text-align: center;
-        color: white;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        color: #1b4332;
+        box-shadow: 0 8px 25px rgba(168, 230, 207, 0.35);
+        border: 1px solid #b7e4c7;
     }
     
+    /* กล่องผลลัพธ์ - อันตราย/ระวัง (Danger / Soft Rose Coral) */
     .result-box-danger {
-        background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+        background: linear-gradient(135deg, #ff85a1 0%, #ff6b6b 100%);
         padding: 2rem;
         border-radius: 20px;
         text-align: center;
-        color: white;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        color: #ffffff;
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.35);
     }
     
-    /* Sidebar */
+    /* Sidebar Styling */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #2c3e50 0%, #4a6572 100%);
+        background: #fffafc;
+        border-right: 1px solid #ffd1e1;
     }
     
     [data-testid="stSidebar"] * {
-        color: white !important;
+        color: #4a2b38 !important;
     }
     
-    /* ปุ่ม */
+    /* ปุ่มกด */
     .stButton > button {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white;
+        background: linear-gradient(90deg, #ff4081, #ff6699);
+        color: #ffffff !important;
         font-weight: bold;
         border: none;
         padding: 0.6rem 2rem;
-        border-radius: 10px;
+        border-radius: 12px;
         font-size: 1.1rem;
         width: 100%;
+        box-shadow: 0 4px 15px rgba(255, 64, 129, 0.25);
+        transition: all 0.2s ease-in-out;
     }
     
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 6px 20px rgba(255, 64, 129, 0.35);
+        filter: brightness(1.05);
     }
 </style>
 """, unsafe_allow_html=True)
